@@ -38,13 +38,13 @@ extension Duration : CustomStringConvertible, CustomDebugStringConvertible {
     public var description: String {
         switch abs(nanoseconds) {
         case 0..<1_000:
-            return "\(nanoseconds)ns"
+            return NSString(format: "%.2fns", nanoseconds) as String
         case 1_000..<1_000_000:
-            return "\(microseconds)µs"
+            return NSString(format: "%.2fµs", microseconds) as String
         case 1_000_000..<1_000_000_000:
-            return "\(milliseconds)ms"
+            return NSString(format: "%.2fms", milliseconds) as String
         default:
-            return "\(seconds)s"
+            return NSString(format: "%.2fs", seconds) as String
         }
     }
 
