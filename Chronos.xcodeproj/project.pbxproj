@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D854C14C1B96120E00651C6D /* Testcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854C1491B96120E00651C6D /* Testcase.swift */; settings = {ASSET_TAGS = (); }; };
+		D854C14E1B96120E00651C6D /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854C14B1B96120E00651C6D /* Util.swift */; settings = {ASSET_TAGS = (); }; };
+		D854C1681B96263500651C6D /* TestcaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854C1671B96263500651C6D /* TestcaseResult.swift */; settings = {ASSET_TAGS = (); }; };
 		D8A818C31B91F8ED006FE3B7 /* Chronos.h in Headers */ = {isa = PBXBuildFile; fileRef = D8A818C21B91F8ED006FE3B7 /* Chronos.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8A818CA1B91F8ED006FE3B7 /* Chronos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A818BF1B91F8ED006FE3B7 /* Chronos.framework */; settings = {ASSET_TAGS = (); }; };
 		D8A818CF1B91F8ED006FE3B7 /* ChronosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A818CE1B91F8ED006FE3B7 /* ChronosTests.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D854C1491B96120E00651C6D /* Testcase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Testcase.swift; sourceTree = "<group>"; };
+		D854C14B1B96120E00651C6D /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		D854C1671B96263500651C6D /* TestcaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestcaseResult.swift; sourceTree = "<group>"; };
 		D8A818BF1B91F8ED006FE3B7 /* Chronos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chronos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A818C21B91F8ED006FE3B7 /* Chronos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chronos.h; sourceTree = "<group>"; };
 		D8A818C41B91F8ED006FE3B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 				D8A818C41B91F8ED006FE3B7 /* Info.plist */,
 				D8A819401B91FD17006FE3B7 /* Duration.swift */,
 				D8A8193E1B91FBF6006FE3B7 /* Time.swift */,
+				D854C1491B96120E00651C6D /* Testcase.swift */,
+				D854C1671B96263500651C6D /* TestcaseResult.swift */,
+				D854C14B1B96120E00651C6D /* Util.swift */,
 			);
 			path = Chronos;
 			sourceTree = "<group>";
@@ -318,6 +327,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8A8193F1B91FBF6006FE3B7 /* Time.swift in Sources */,
+				D854C14E1B96120E00651C6D /* Util.swift in Sources */,
+				D854C14C1B96120E00651C6D /* Testcase.swift in Sources */,
+				D854C1681B96263500651C6D /* TestcaseResult.swift in Sources */,
 				D8A819411B91FD17006FE3B7 /* Duration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +523,7 @@
 				D8A818D51B91F8ED006FE3B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8A818D61B91F8ED006FE3B7 /* Build configuration list for PBXNativeTarget "ChronosTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +532,7 @@
 				D8A818D81B91F8ED006FE3B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
