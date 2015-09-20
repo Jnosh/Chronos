@@ -3,10 +3,8 @@
 //  Chronos
 //
 //  Created by Janosch Hildebrand on 22/04/15.
-//  Copyright (c) 2015 Janosch Hildebrand. All rights reserved.
+//  Copyright © 2015 Janosch Hildebrand. All rights reserved.
 //
-
-import Foundation
 
 public protocol TestcaseType {
     typealias Input

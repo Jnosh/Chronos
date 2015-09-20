@@ -1,9 +1,9 @@
 //
 //  Util.swift
-//  SwiftPerf
+//  Chronos
 //
 //  Created by Janosch Hildebrand on 01/09/15.
-//
+//  Copyright © 2015 Janosch Hildebrand. All rights reserved.
 //
 
 

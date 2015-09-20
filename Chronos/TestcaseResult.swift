@@ -3,7 +3,7 @@
 //  Chronos
 //
 //  Created by Janosch Hildebrand on 31/08/15.
-//
+//  Copyright © 2015 Janosch Hildebrand. All rights reserved.
 //
 
 import Foundation

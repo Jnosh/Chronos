@@ -1,11 +1,12 @@
 //
 //  Time.swift
-//  JHKit
+//  Chronos
 //
 //  Created by Janosch Hildebrand on 14/02/15.
-//  Copyright (c) 2015 Janosch Hildebrand. All rights reserved.
+//  Copyright © 2015 Janosch Hildebrand. All rights reserved.
 //
 
+import Darwin
 
 // TODO: Could add some more full featured timing functions
 // Min time instead of mean, or other variants

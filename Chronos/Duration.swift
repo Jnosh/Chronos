@@ -6,6 +6,8 @@
 //  Copyright © 2015 Janosch Hildebrand. All rights reserved.
 //
 
+import Foundation
+
 /// Represents a time interval with nanosecond precision.
 public struct Duration {
     /// The duration in nanoseconds
