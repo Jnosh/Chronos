@@ -42,7 +42,7 @@ public struct Stopwatch {
     }
 
     /// Time the time taken to execute `body` for `iterations` times.
-    public static func time(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
+    @transparent public static func time(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
         precondition(iterations >= 0)
 
         // Warmup
@@ -54,12 +54,12 @@ public struct Stopwatch {
     }
 
     /// Time the execution of a single execution of `body`.
-    public static func time(@noescape body: () throws -> ()) rethrows -> Duration {
+    @transparent public static func time(@noescape body: () throws -> ()) rethrows -> Duration {
         return try self.time(iterations: 1, body: body)
     }
 
     /// Returns the mean time for executing `body` after `iterations` iterations.
-    public static func meanTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
+    @transparent public static func meanTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
         let duration = try self.time(iterations: iterations, body: body)
         return duration / Double(iterations)
     }
