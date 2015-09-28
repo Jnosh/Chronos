@@ -14,8 +14,13 @@ import Foundation
 
 
 public struct TestcaseResult {
-    let name: String
-    let time: Duration
+    public let name: String
+    public let time: Duration
+    
+    public init(name: String, time: Duration) {
+        self.name = name
+        self.time = time
+    }
 }
 
 extension TestcaseResult : CustomStringConvertible {
@@ -25,8 +30,13 @@ extension TestcaseResult : CustomStringConvertible {
 }
 
 public struct TestcaseGroupResult<Input> {
-    let input: Input
-    let results: [TestcaseResult]
+    public let input: Input
+    public let results: [TestcaseResult]
+    
+    public init(input: Input, results: [TestcaseResult]) {
+        self.input = input
+        self.results = results
+    }
 }
 
 private enum Scale: String {

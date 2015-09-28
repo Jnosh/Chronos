@@ -7,5 +7,5 @@
 //
 
 
-@inline(never) func consumeValue<T>(e: T) {
+@inline(never) public func consumeValue<T>(e: T) {
 }
