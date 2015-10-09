@@ -88,11 +88,10 @@ extension TestcaseGroupResult : CustomStringConvertible {
         result += " " + inputDescription + " "
         result += String(count: inputPadding + extraPadding, repeatedValue: separator)
         result += newline
-        
-        let fastest = results.reduce(DBL_MAX) { fastest, testcase in
-            return min(fastest, testcase.time.nanoseconds)
-        }
-        let scale = Scale(value: fastest)
+
+        let sorted = results.sort { $0.time < $1.time }
+        let median = sorted[sorted.count / 2]
+        let scale = Scale(value: median.time.nanoseconds)
         
         for testcase in results {
             let name = testcase.name
