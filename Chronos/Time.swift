@@ -41,29 +41,49 @@ public struct Stopwatch {
         return Duration(nanoseconds: Double(elapsedNano))
     }
 
-    /// Time the time taken to execute `body` for `iterations` times.
-    @transparent public static func time(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
+    /// Time the execution of a single execution of `body`.
+    @transparent public static func time(@noescape body: () throws -> ()) rethrows -> Duration {
+        let stopwatch = Stopwatch()
+        try body()
+        return stopwatch.elapsed()
+    }
+
+
+    /// Time `iterations` executions of `body`.
+    @transparent public static func time(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> [Duration] {
+        precondition(iterations >= 0)
+
+        var durations = Array<Duration>()
+        durations.reserveCapacity(iterations)
+
+        // Warmup
+        try body()
+
+        for _ in 0..<iterations {
+            let stopwatch = Stopwatch()
+            try body()
+            durations.append(stopwatch.elapsed())
+        }
+
+        return durations
+    }
+
+
+    /// Returns the mean time for executing `body` for `iterations` iterations.
+    @transparent public static func meanTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
         precondition(iterations >= 0)
 
         // Warmup
         try body()
 
         let stopwatch = Stopwatch()
-        for _ in 0..<iterations { try body() }
-        return stopwatch.elapsed()
-    }
+        for _ in 0..<iterations {
+            try body()
+        }
+        let duration = stopwatch.elapsed()
 
-    /// Time the execution of a single execution of `body`.
-    @transparent public static func time(@noescape body: () throws -> ()) rethrows -> Duration {
-        return try self.time(iterations: 1, body: body)
-    }
-
-    /// Returns the mean time for executing `body` after `iterations` iterations.
-    @transparent public static func meanTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
-        let duration = try self.time(iterations: iterations, body: body)
         return duration / Double(iterations)
     }
-
 
 /*
     public static func meanTime(iterations: Int, samples: Int, @noescape body: () throws -> ()) rethrows -> Duration {
