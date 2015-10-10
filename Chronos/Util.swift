@@ -11,7 +11,7 @@
 }
 
 
-@transparent public func runTestcaseGroup<Input>(testcases: [Input -> ()], names: [String], input: Input, iterations: Int) -> TestcaseGroupResult<Input> {
+@transparent public func runTestcaseGroup<Input>(testcases testcases: [Input -> ()], names: [String], input: Input, iterations: Int) -> TestcaseGroupResult<Input> {
     precondition(testcases.count == names.count)
     precondition(iterations > 0)
 

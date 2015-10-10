@@ -113,7 +113,7 @@ extension TestcaseGroupResult : CustomStringConvertible {
             return max(length, nameLength)
         }
         
-        let lineLength = max(nameLength, inputLength) + 25
+        let lineLength = max(nameLength, inputLength) + 30
         
         
         let inputPadding = (lineLength - inputLength - 2) / 2
