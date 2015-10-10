@@ -112,8 +112,10 @@ extension TestcaseGroupResult : CustomStringConvertible {
             let nameLength = testcase.name.characters.count
             return max(length, nameLength)
         }
-        
-        let lineLength = max(nameLength, inputLength) + 30
+
+
+        let format = ": ##########tt    σ: ##########tt"
+        let lineLength = max(nameLength, inputLength) + format.characters.count
         
         
         let inputPadding = (lineLength - inputLength - 2) / 2
@@ -129,14 +131,14 @@ extension TestcaseGroupResult : CustomStringConvertible {
         
         for testcase in results {
             let name = testcase.name
-            let time = NSString(format: "%#.4g%@    σ: %#.4g%@", testcase.mean.nanoseconds / scale.factor,
-                                                                scale.rawValue,
-                                                                testcase.stddev.nanoseconds / scale.factor,
-                                                                scale.rawValue) as String
-            let padding = lineLength - name.characters.count - time.characters.count - 1
-            result += testcase.name
-            result += ":" + String(count: abs(padding), repeatedValue: space)
-            result += time + newline
+            let time = NSString(format: "%10.4g", testcase.mean.nanoseconds / scale.factor) as String
+            let stddev = NSString(format: "%10.4g", testcase.stddev.nanoseconds / scale.factor) as String
+            let resultString = time + scale.rawValue + "    σ: " + stddev + scale.rawValue
+            let padding = lineLength - name.characters.count - resultString.characters.count - 1
+            result += name + ":"
+            result += String(count: abs(padding), repeatedValue: space)
+            result += resultString
+            result += newline
         }
         
         result += String(count: lineLength, repeatedValue: separator)

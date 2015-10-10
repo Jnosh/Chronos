@@ -10,6 +10,6 @@ let iterations = 10
 
 
 for input in inputs {
-    let resultGroup = runTestcaseGroup(testcases, names: names, input: input, iterations: iterations)
+    let resultGroup = runTestcaseGroup(testcases: testcases, names: names, input: input, iterations: iterations)
     print(resultGroup)
 }
