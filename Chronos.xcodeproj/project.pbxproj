@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D854C14C1B96120E00651C6D /* Testcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854C1491B96120E00651C6D /* Testcase.swift */; settings = {ASSET_TAGS = (); }; };
-		D854C14E1B96120E00651C6D /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854C14B1B96120E00651C6D /* Util.swift */; settings = {ASSET_TAGS = (); }; };
-		D854C1681B96263500651C6D /* TestcaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854C1671B96263500651C6D /* TestcaseResult.swift */; settings = {ASSET_TAGS = (); }; };
+		D854C14C1B96120E00651C6D /* Testcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854C1491B96120E00651C6D /* Testcase.swift */; };
+		D854C14E1B96120E00651C6D /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854C14B1B96120E00651C6D /* Util.swift */; };
+		D854C1681B96263500651C6D /* TestcaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854C1671B96263500651C6D /* TestcaseResult.swift */; };
 		D8A818C31B91F8ED006FE3B7 /* Chronos.h in Headers */ = {isa = PBXBuildFile; fileRef = D8A818C21B91F8ED006FE3B7 /* Chronos.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8A818CA1B91F8ED006FE3B7 /* Chronos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A818BF1B91F8ED006FE3B7 /* Chronos.framework */; settings = {ASSET_TAGS = (); }; };
+		D8A818CA1B91F8ED006FE3B7 /* Chronos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A818BF1B91F8ED006FE3B7 /* Chronos.framework */; };
 		D8A818CF1B91F8ED006FE3B7 /* ChronosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A818CE1B91F8ED006FE3B7 /* ChronosTests.swift */; };
-		D8A8193F1B91FBF6006FE3B7 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8193E1B91FBF6006FE3B7 /* Time.swift */; settings = {ASSET_TAGS = (); }; };
-		D8A819411B91FD17006FE3B7 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A819401B91FD17006FE3B7 /* Duration.swift */; settings = {ASSET_TAGS = (); }; };
+		D8A8193F1B91FBF6006FE3B7 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8193E1B91FBF6006FE3B7 /* Time.swift */; };
+		D8A819411B91FD17006FE3B7 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A819401B91FD17006FE3B7 /* Duration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +31,7 @@
 		D854C1491B96120E00651C6D /* Testcase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Testcase.swift; sourceTree = "<group>"; };
 		D854C14B1B96120E00651C6D /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		D854C1671B96263500651C6D /* TestcaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestcaseResult.swift; sourceTree = "<group>"; };
+		D87C7F051BC94F9800B387C6 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 		D8A818BF1B91F8ED006FE3B7 /* Chronos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chronos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A818C21B91F8ED006FE3B7 /* Chronos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chronos.h; sourceTree = "<group>"; };
 		D8A818C41B91F8ED006FE3B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		D8A818B51B91F8ED006FE3B7 = {
 			isa = PBXGroup;
 			children = (
+				D87C7F051BC94F9800B387C6 /* Playground.playground */,
 				D8A818C11B91F8ED006FE3B7 /* Chronos */,
 				D8A818CD1B91F8ED006FE3B7 /* ChronosTests */,
 				D8A819191B91FBBB006FE3B7 /* Configuration */,
