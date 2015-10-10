@@ -48,7 +48,6 @@ public struct Stopwatch {
         return stopwatch.elapsed()
     }
 
-
     /// Time `iterations` executions of `body`.
     @transparent public static func time(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> [Duration] {
         precondition(iterations >= 0)
@@ -68,9 +67,8 @@ public struct Stopwatch {
         return durations
     }
 
-
-    /// Returns the mean time for executing `body` for `iterations` iterations.
-    @transparent public static func meanTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
+    /// Total time to execute `body` for `iterations` iterations.
+    @transparent public static func totalTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
         precondition(iterations >= 0)
 
         // Warmup
@@ -80,37 +78,42 @@ public struct Stopwatch {
         for _ in 0..<iterations {
             try body()
         }
-        let duration = stopwatch.elapsed()
+        return stopwatch.elapsed()
+    }
 
+
+    /// Returns the mean time for executing `body` for `iterations` iterations.
+    @transparent public static func meanTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
+        let duration = try totalTime(iterations: iterations, body: body)
         return duration / Double(iterations)
     }
 
-/*
+    /*
     public static func meanTime(iterations: Int, samples: Int, @noescape body: () throws -> ()) rethrows -> Duration {
-        // TODO: could request real-time scheduling for thread
-        // TODO: Could set thread affinity
-        // thread_policy_set()
+    // TODO: could request real-time scheduling for thread
+    // TODO: Could set thread affinity
+    // thread_policy_set()
 
-        // Warmup
-        try body()
+    // Warmup
+    try body()
 
-        // Get samples for the execution of two iterations
-        let twoTimes = try (0..<samples).map {
-            return try self.time(iterations: 2, body: body)
-        }
-
-        // Get samples for the execution of two+iterations iterations
-        let twoPlusTimes = try (0..<samples).map {
-            return try self.time(iterations: 2 + iterations, body: body)
-        }
-
-        // Calculate the min time
-        let minTime = min(twoPlusTimes) - min(twoTimes)
-
-
-        // Return the mean of the min time
-        return Duration(nanoseconds: minTime / Double(iterations))
+    // Get samples for the execution of two iterations
+    let twoTimes = try (0..<samples).map {
+    return try self.time(iterations: 2, body: body)
     }
-*/
 
+    // Get samples for the execution of two+iterations iterations
+    let twoPlusTimes = try (0..<samples).map {
+    return try self.time(iterations: 2 + iterations, body: body)
+    }
+
+    // Calculate the min time
+    let minTime = min(twoPlusTimes) - min(twoTimes)
+
+
+    // Return the mean of the min time
+    return Duration(nanoseconds: minTime / Double(iterations))
+    }
+    */
+    
 }
