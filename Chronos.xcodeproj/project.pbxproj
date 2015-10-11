@@ -11,21 +11,9 @@
 		D854C14E1B96120E00651C6D /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854C14B1B96120E00651C6D /* Util.swift */; };
 		D854C1681B96263500651C6D /* TestcaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854C1671B96263500651C6D /* TestcaseResult.swift */; };
 		D8A818C31B91F8ED006FE3B7 /* Chronos.h in Headers */ = {isa = PBXBuildFile; fileRef = D8A818C21B91F8ED006FE3B7 /* Chronos.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8A818CA1B91F8ED006FE3B7 /* Chronos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A818BF1B91F8ED006FE3B7 /* Chronos.framework */; };
-		D8A818CF1B91F8ED006FE3B7 /* ChronosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A818CE1B91F8ED006FE3B7 /* ChronosTests.swift */; };
 		D8A8193F1B91FBF6006FE3B7 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8193E1B91FBF6006FE3B7 /* Time.swift */; };
 		D8A819411B91FD17006FE3B7 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A819401B91FD17006FE3B7 /* Duration.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D8A818CB1B91F8ED006FE3B7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D8A818B61B91F8ED006FE3B7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D8A818BE1B91F8ED006FE3B7;
-			remoteInfo = Chronos;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D854C1491B96120E00651C6D /* Testcase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Testcase.swift; sourceTree = "<group>"; };
@@ -35,9 +23,6 @@
 		D8A818BF1B91F8ED006FE3B7 /* Chronos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chronos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A818C21B91F8ED006FE3B7 /* Chronos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chronos.h; sourceTree = "<group>"; };
 		D8A818C41B91F8ED006FE3B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8A818C91B91F8ED006FE3B7 /* ChronosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChronosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8A818CE1B91F8ED006FE3B7 /* ChronosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronosTests.swift; sourceTree = "<group>"; };
-		D8A818D01B91F8ED006FE3B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8A8191C1B91FBBB006FE3B7 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		D8A8191E1B91FBBB006FE3B7 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D8A8191F1B91FBBB006FE3B7 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
@@ -76,14 +61,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8A818C61B91F8ED006FE3B7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D8A818CA1B91F8ED006FE3B7 /* Chronos.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -92,7 +69,6 @@
 			children = (
 				D87C7F051BC94F9800B387C6 /* Playground.playground */,
 				D8A818C11B91F8ED006FE3B7 /* Chronos */,
-				D8A818CD1B91F8ED006FE3B7 /* ChronosTests */,
 				D8A819191B91FBBB006FE3B7 /* Configuration */,
 				D8A818C01B91F8ED006FE3B7 /* Products */,
 			);
@@ -102,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				D8A818BF1B91F8ED006FE3B7 /* Chronos.framework */,
-				D8A818C91B91F8ED006FE3B7 /* ChronosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,15 +94,6 @@
 				D854C14B1B96120E00651C6D /* Util.swift */,
 			);
 			path = Chronos;
-			sourceTree = "<group>";
-		};
-		D8A818CD1B91F8ED006FE3B7 /* ChronosTests */ = {
-			isa = PBXGroup;
-			children = (
-				D8A818CE1B91F8ED006FE3B7 /* ChronosTests.swift */,
-				D8A818D01B91F8ED006FE3B7 /* Info.plist */,
-			);
-			path = ChronosTests;
 			sourceTree = "<group>";
 		};
 		D8A819191B91FBBB006FE3B7 /* Configuration */ = {
@@ -252,24 +218,6 @@
 			productReference = D8A818BF1B91F8ED006FE3B7 /* Chronos.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D8A818C81B91F8ED006FE3B7 /* ChronosTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D8A818D61B91F8ED006FE3B7 /* Build configuration list for PBXNativeTarget "ChronosTests" */;
-			buildPhases = (
-				D8A818C51B91F8ED006FE3B7 /* Sources */,
-				D8A818C61B91F8ED006FE3B7 /* Frameworks */,
-				D8A818C71B91F8ED006FE3B7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D8A818CC1B91F8ED006FE3B7 /* PBXTargetDependency */,
-			);
-			name = ChronosTests;
-			productName = ChronosTests;
-			productReference = D8A818C91B91F8ED006FE3B7 /* ChronosTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -281,9 +229,6 @@
 				ORGANIZATIONNAME = "Janosch Hildebrand";
 				TargetAttributes = {
 					D8A818BE1B91F8ED006FE3B7 = {
-						CreatedOnToolsVersion = 7.0;
-					};
-					D8A818C81B91F8ED006FE3B7 = {
 						CreatedOnToolsVersion = 7.0;
 					};
 				};
@@ -301,20 +246,12 @@
 			projectRoot = "";
 			targets = (
 				D8A818BE1B91F8ED006FE3B7 /* Chronos */,
-				D8A818C81B91F8ED006FE3B7 /* ChronosTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D8A818BD1B91F8ED006FE3B7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D8A818C71B91F8ED006FE3B7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -336,23 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8A818C51B91F8ED006FE3B7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D8A818CF1B91F8ED006FE3B7 /* ChronosTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D8A818CC1B91F8ED006FE3B7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D8A818BE1B91F8ED006FE3B7 /* Chronos */;
-			targetProxy = D8A818CB1B91F8ED006FE3B7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D8A818D11B91F8ED006FE3B7 /* Debug */ = {
@@ -482,30 +403,6 @@
 			};
 			name = Release;
 		};
-		D8A818D71B91F8ED006FE3B7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8A8192E1B91FBBB006FE3B7 /* Mac-Application.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ChronosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = janoschhildebrand.ChronosTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		D8A818D81B91F8ED006FE3B7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8A8192E1B91FBBB006FE3B7 /* Mac-Application.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ChronosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = janoschhildebrand.ChronosTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -523,15 +420,6 @@
 			buildConfigurations = (
 				D8A818D41B91F8ED006FE3B7 /* Debug */,
 				D8A818D51B91F8ED006FE3B7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D8A818D61B91F8ED006FE3B7 /* Build configuration list for PBXNativeTarget "ChronosTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D8A818D71B91F8ED006FE3B7 /* Debug */,
-				D8A818D81B91F8ED006FE3B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

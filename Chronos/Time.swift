@@ -8,11 +8,6 @@
 
 import Darwin
 
-// TODO: Could add some more full featured timing functions
-// Min time instead of mean, or other variants
-// Return of measurement data / data structure so custom weighting can be applied...
-// etc...
-
 /// A simple stopwatch that counts the elapsed time since its creation.
 public struct Stopwatch {
     /// The time the stopwatch was started.
@@ -41,7 +36,7 @@ public struct Stopwatch {
         return Duration(nanoseconds: Double(elapsedNano))
     }
 
-    /// Time the execution of a single execution of `body`.
+    /// Time the execution of `body`.
     @transparent public static func time(@noescape body: () throws -> ()) rethrows -> Duration {
         let stopwatch = Stopwatch()
         try body()
@@ -90,29 +85,29 @@ public struct Stopwatch {
 
     /*
     public static func meanTime(iterations: Int, samples: Int, @noescape body: () throws -> ()) rethrows -> Duration {
-    // TODO: could request real-time scheduling for thread
-    // TODO: Could set thread affinity
-    // thread_policy_set()
+        // TODO: could request real-time scheduling for thread
+        // TODO: Could set thread affinity
+        // thread_policy_set()
 
-    // Warmup
-    try body()
+        // Warmup
+        try body()
 
-    // Get samples for the execution of two iterations
-    let twoTimes = try (0..<samples).map {
-    return try self.time(iterations: 2, body: body)
-    }
+        // Get samples for the execution of two iterations
+        let twoTimes = try (0..<samples).map {
+        return try self.time(iterations: 2, body: body)
+        }
 
-    // Get samples for the execution of two+iterations iterations
-    let twoPlusTimes = try (0..<samples).map {
-    return try self.time(iterations: 2 + iterations, body: body)
-    }
+        // Get samples for the execution of two+iterations iterations
+        let twoPlusTimes = try (0..<samples).map {
+        return try self.time(iterations: 2 + iterations, body: body)
+        }
 
-    // Calculate the min time
-    let minTime = min(twoPlusTimes) - min(twoTimes)
+        // Calculate the min time
+        let minTime = min(twoPlusTimes) - min(twoTimes)
 
 
-    // Return the mean of the min time
-    return Duration(nanoseconds: minTime / Double(iterations))
+        // Return the mean of the min time
+        return Duration(nanoseconds: minTime / Double(iterations))
     }
     */
     

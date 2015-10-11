@@ -63,22 +63,12 @@ extension TestcaseResult : CustomStringConvertible {
     }
 }
 
-public struct TestcaseGroupResult<Input> {
-    public let input: Input
-    public let results: [TestcaseResult]
-    
-    public init(input: Input, results: [TestcaseResult]) {
-        self.input = input
-        self.results = results
-    }
-}
-
 private enum Scale: String {
     case Nanoseconds = "ns"
     case Microseconds = "us"
     case Milliseconds = "ms"
     case Seconds = "s"
-    
+
     var factor: Double {
         switch self {
         case Nanoseconds: return 1
@@ -87,7 +77,7 @@ private enum Scale: String {
         case Seconds: return 1_000_000_000
         }
     }
-    
+
     init(value: Double) {
         switch abs(value) {
         case 0..<1_000: self = .Nanoseconds
@@ -95,6 +85,20 @@ private enum Scale: String {
         case 1_000_000..<1_000_000_000: self = .Milliseconds
         default: self = .Seconds
         }
+    }
+}
+
+
+// TODO: Group names
+// TODO: display options
+
+public struct TestcaseGroupResult<Input> {
+    public let input: Input
+    public let results: [TestcaseResult]
+    
+    public init(input: Input, results: [TestcaseResult]) {
+        self.input = input
+        self.results = results
     }
 }
 

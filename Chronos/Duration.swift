@@ -15,22 +15,22 @@ public struct Duration {
 
     /// Initialize a new Duration
     ///
-    /// Double gives us nanosecond precision for up to ~100 days
+    /// `Double` gives us nanosecond precision for up to ~100 days
     public init(nanoseconds: Double) {
         self.nanoseconds = nanoseconds
     }
 
-    /// The Duration in microseconds
+    /// The duration in microseconds
     public var microseconds: Double {
         return nanoseconds / 1_000
     }
 
-    /// The Duration in milliseconds
+    /// The duration in milliseconds
     public var milliseconds: Double {
         return nanoseconds / 1_000_000
     }
 
-    /// The Duration in seconds - this is essentially a NSTimeInterval
+    /// The duration in seconds - this is essentially a `NSTimeInterval`
     public var seconds: Double {
         return nanoseconds / 1_000_000_000
     }
