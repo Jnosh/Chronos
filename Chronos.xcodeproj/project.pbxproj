@@ -364,7 +364,7 @@
 		};
 		D8A818D41B91F8ED006FE3B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8A819371B91FBBB006FE3B7 /* UniversalFramework_Framework.xcconfig */;
+			baseConfigurationReference = D8A819311B91FBBB006FE3B7 /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -385,7 +385,7 @@
 		};
 		D8A818D51B91F8ED006FE3B7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8A819371B91FBBB006FE3B7 /* UniversalFramework_Framework.xcconfig */;
+			baseConfigurationReference = D8A819311B91FBBB006FE3B7 /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
