@@ -15,7 +15,7 @@ public struct Stopwatch {
 
     /// The timebase info used to interpret the results of mach_absolute_time.
     private static let timebase: mach_timebase_info_data_t = {
-        var timebase = mach_timebase_info_data_t()
+        var timebase = mach_timebase_info_data_t(numer: 0, denom: 0)
         mach_timebase_info(&timebase)
         return timebase
     }()
@@ -37,14 +37,14 @@ public struct Stopwatch {
     }
 
     /// Time the execution of `body`.
-    @transparent public static func time(@noescape body: () -> ()) -> Duration {
+    @transparent public static func time(body: () -> ()) -> Duration {
         let stopwatch = Stopwatch()
         body()
         return stopwatch.elapsed()
     }
 
     /// Time `iterations` executions of `body`.
-    @transparent public static func time(iterations iterations: Int, @noescape body: () -> ()) -> [Duration] {
+    @transparent public static func time(iterations iterations: Int, body: () -> ()) -> [Duration] {
         precondition(iterations >= 0)
 
         var durations = Array<Duration>()
@@ -63,7 +63,7 @@ public struct Stopwatch {
     }
 
     /// Total time to execute `body` for `iterations` iterations.
-    @transparent public static func totalTime(iterations iterations: Int, @noescape body: () -> ()) -> Duration {
+    @transparent public static func totalTime(iterations iterations: Int, body: () -> ()) -> Duration {
         precondition(iterations >= 0)
 
         // Warmup
@@ -78,7 +78,7 @@ public struct Stopwatch {
 
 
     /// Returns the mean time for executing `body` for `iterations` iterations.
-    @transparent public static func meanTime(iterations iterations: Int, @noescape body: () -> ()) -> Duration {
+    @transparent public static func meanTime(iterations iterations: Int, body: () -> ()) -> Duration {
         let duration = totalTime(iterations: iterations, body: body)
         return duration / Double(iterations)
     }

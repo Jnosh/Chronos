@@ -37,7 +37,7 @@ public struct TestcaseResult {
     }
 
     public var mean: Duration {
-        let total = runtimes.reduce(0) { return $0 + $1.nanoseconds }
+        let total = runtimes.reduce(0.0) { return $0 + $1.nanoseconds }
         return Duration(nanoseconds: total / Double(runtimes.count))
     }
 
@@ -110,16 +110,16 @@ extension TestcaseGroupResult : Printable {
         var result: String = ""
         
         let inputDescription = "\(input)"
-        let inputLength = count(inputDescription)
+        let inputLength = countElements(inputDescription)
 
         let nameLength = results.reduce(0) { length, testcase in
-            let nameLength = count(testcase.name)
+            let nameLength = countElements(testcase.name)
             return max(length, nameLength)
         }
 
 
         let format = ": ##########tt    σ: ##########tt"
-        let lineLength = max(nameLength, inputLength) + count(format)
+        let lineLength = max(nameLength, inputLength) + countElements(format)
 
         
         let inputPadding = (lineLength - inputLength - 2) / 2
@@ -138,7 +138,7 @@ extension TestcaseGroupResult : Printable {
             let time = NSString(format: "%10.4g", testcase.mean.nanoseconds / scale.factor) as String
             let stddev = NSString(format: "%10.4g", testcase.stddev.nanoseconds / scale.factor) as String
             let resultString = time + scale.rawValue + "    σ: " + stddev + scale.rawValue
-            let padding = lineLength - count(name) - count(resultString) - 1
+            let padding = lineLength - countElements(name) - countElements(resultString) - 1
             result += name + ":"
             result += String(count: abs(padding), repeatedValue: space)
             result += resultString
