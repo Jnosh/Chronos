@@ -37,25 +37,25 @@ public struct Stopwatch {
     }
 
     /// Time the execution of `body`.
-    @transparent public static func time(@noescape body: () throws -> ()) rethrows -> Duration {
+    @transparent public static func time(@noescape body: () -> ()) -> Duration {
         let stopwatch = Stopwatch()
-        try body()
+        body()
         return stopwatch.elapsed()
     }
 
     /// Time `iterations` executions of `body`.
-    @transparent public static func time(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> [Duration] {
+    @transparent public static func time(iterations iterations: Int, @noescape body: () -> ()) -> [Duration] {
         precondition(iterations >= 0)
 
         var durations = Array<Duration>()
         durations.reserveCapacity(iterations)
 
         // Warmup
-        try body()
+        body()
 
         for _ in 0..<iterations {
             let stopwatch = Stopwatch()
-            try body()
+            body()
             durations.append(stopwatch.elapsed())
         }
 
@@ -63,23 +63,23 @@ public struct Stopwatch {
     }
 
     /// Total time to execute `body` for `iterations` iterations.
-    @transparent public static func totalTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
+    @transparent public static func totalTime(iterations iterations: Int, @noescape body: () -> ()) -> Duration {
         precondition(iterations >= 0)
 
         // Warmup
-        try body()
+        body()
 
         let stopwatch = Stopwatch()
         for _ in 0..<iterations {
-            try body()
+            body()
         }
         return stopwatch.elapsed()
     }
 
 
     /// Returns the mean time for executing `body` for `iterations` iterations.
-    @transparent public static func meanTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
-        let duration = try totalTime(iterations: iterations, body: body)
+    @transparent public static func meanTime(iterations iterations: Int, @noescape body: () -> ()) -> Duration {
+        let duration = totalTime(iterations: iterations, body: body)
         return duration / Double(iterations)
     }
 

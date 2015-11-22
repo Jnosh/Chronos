@@ -36,7 +36,7 @@ public struct Duration {
     }
 }
 
-extension Duration : CustomStringConvertible, CustomDebugStringConvertible {
+extension Duration : DebugPrintable, Printable {
     public var description: String {
         switch abs(nanoseconds) {
         case 0..<1_000:

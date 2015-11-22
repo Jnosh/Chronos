@@ -29,11 +29,11 @@ public struct TestcaseResult {
     }
 
     public var min: Duration {
-        return runtimes.minElement()!
+        return minElement(runtimes)
     }
 
     public var max: Duration {
-        return runtimes.maxElement()!
+        return maxElement(runtimes)
     }
 
     public var mean: Duration {
@@ -42,7 +42,7 @@ public struct TestcaseResult {
     }
 
     public var median: Duration {
-        let sorted = runtimes.sort()
+        let sorted = runtimes.sorted(<)
         return sorted[sorted.count / 2]
     }
 
@@ -57,7 +57,7 @@ public struct TestcaseResult {
     }
 }
 
-extension TestcaseResult : CustomStringConvertible {
+extension TestcaseResult : Printable {
     public var description: String {
         return "\(name): \(time)"
     }
@@ -102,25 +102,25 @@ public struct TestcaseGroupResult<Input> {
     }
 }
 
-extension TestcaseGroupResult : CustomStringConvertible {
+extension TestcaseGroupResult : Printable {
     public var description: String {
         let separator: Character = "="
         let space: Character = " "
         let newline = "\n"
         var result: String = ""
         
-        let inputDescription = String(input)
-        let inputLength = inputDescription.characters.count
+        let inputDescription = "\(input)"
+        let inputLength = count(inputDescription)
 
         let nameLength = results.reduce(0) { length, testcase in
-            let nameLength = testcase.name.characters.count
+            let nameLength = count(testcase.name)
             return max(length, nameLength)
         }
 
 
         let format = ": ##########tt    σ: ##########tt"
-        let lineLength = max(nameLength, inputLength) + format.characters.count
-        
+        let lineLength = max(nameLength, inputLength) + count(format)
+
         
         let inputPadding = (lineLength - inputLength - 2) / 2
         let extraPadding = (lineLength - inputLength - 2) % 2
@@ -129,7 +129,7 @@ extension TestcaseGroupResult : CustomStringConvertible {
         result += String(count: inputPadding + extraPadding, repeatedValue: separator)
         result += newline
 
-        let sorted = results.map { $0.mean }.sort()
+        let sorted = results.map { $0.mean }.sorted(<)
         let median = sorted[sorted.count / 2]
         let scale = Scale(value: median.nanoseconds)
         
@@ -138,7 +138,7 @@ extension TestcaseGroupResult : CustomStringConvertible {
             let time = NSString(format: "%10.4g", testcase.mean.nanoseconds / scale.factor) as String
             let stddev = NSString(format: "%10.4g", testcase.stddev.nanoseconds / scale.factor) as String
             let resultString = time + scale.rawValue + "    σ: " + stddev + scale.rawValue
-            let padding = lineLength - name.characters.count - resultString.characters.count - 1
+            let padding = lineLength - count(name) - count(resultString) - 1
             result += name + ":"
             result += String(count: abs(padding), repeatedValue: space)
             result += resultString
