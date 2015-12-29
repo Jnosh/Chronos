@@ -23,7 +23,7 @@
 //      * Could use some instance that is configured
 //      * Or build on TestcaseType. Probably cleanest but needs more boilerplate
 //      * if we make each test a type :-(
-@transparent public func runTestcaseGroup<Input>(testcases testcases: [Input -> ()], names: [String], input: Input, iterations: Int) -> TestcaseGroupResult<Input> {
+@_transparent public func runTestcaseGroup<Input>(testcases testcases: [Input -> ()], names: [String], input: Input, iterations: Int) -> TestcaseGroupResult<Input> {
     precondition(testcases.count == names.count)
     precondition(iterations > 0)
 

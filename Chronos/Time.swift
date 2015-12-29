@@ -37,14 +37,14 @@ public struct Stopwatch {
     }
 
     /// Time the execution of `body`.
-    @transparent public static func time(@noescape body: () throws -> ()) rethrows -> Duration {
+    @_transparent public static func time(@noescape body: () throws -> ()) rethrows -> Duration {
         let stopwatch = Stopwatch()
         try body()
         return stopwatch.elapsed()
     }
 
     /// Time `iterations` executions of `body`.
-    @transparent public static func time(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> [Duration] {
+    @_transparent public static func time(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> [Duration] {
         precondition(iterations >= 0)
 
         var durations = Array<Duration>()
@@ -63,7 +63,7 @@ public struct Stopwatch {
     }
 
     /// Total time to execute `body` for `iterations` iterations.
-    @transparent public static func totalTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
+    @_transparent public static func totalTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
         precondition(iterations >= 0)
 
         // Warmup
@@ -78,7 +78,7 @@ public struct Stopwatch {
 
 
     /// Returns the mean time for executing `body` for `iterations` iterations.
-    @transparent public static func meanTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
+    @_transparent public static func meanTime(iterations iterations: Int, @noescape body: () throws -> ()) rethrows -> Duration {
         let duration = try totalTime(iterations: iterations, body: body)
         return duration / Double(iterations)
     }
