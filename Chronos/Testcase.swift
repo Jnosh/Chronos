@@ -7,7 +7,7 @@
 //
 
 public protocol TestcaseType {
-    typealias Input
+    associatedtype Input
     var name: String { get }
     func run(input: Input) -> Duration
 }
